@@ -2,9 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from astropy.io import ascii
 
-# simple function to assign an evolutionary state given Teff and R
-# see 
-
+# simple function to assign an evolutionary state given Teff and R/logg
 # 0 = main sequence
 # 1 = subgiant
 # 2 = RGB
@@ -14,6 +12,7 @@ def evolstate(teff,rad,logg):
 
     cl=np.zeros(len(teff))
 
+    # Teff+Rad, see Berger et al. 2018
     if (rad[0] > -99):
 
         sg_pc=ascii.read('tams_parsec.txt')
@@ -56,7 +55,7 @@ def evolstate(teff,rad,logg):
         um=np.where((teff < bincut) & (teff > 3200.))[0]
         cl[um] = 3
 
-        
+    # Teff+logg, see Huber et al. 2017
     if (logg[0] > -99):
     
         tlim=5500.
