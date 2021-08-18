@@ -3,7 +3,7 @@ from astropy.io import ascii
 
 
 
-def evolstate(teff, rad, logg, a=-0.68081514, b=2.3019458, c=1.5722924, d=16.269495, e=-37.498445, t_lim=5500.0, 
+def evolstate(teff, rad, logg, a=-0.68081514, b=2.3019458, c=1.5722924, d=16.269495, e=-37.498445,  
               path_tams='tams_parsec.txt', path_rgb='rgb_parsec.txt', path_mist='MIST_iso_5ae3ba3aad3cd.iso',
               teff_lim=5500.0, logg_lim=3.876, bin_teff=[5000.,5400.,6000.,6200.], bin_rad=[3.9,3.2,2.,1.],):
     
